@@ -41,6 +41,13 @@ def show
 @artikel= Artikel.find(params[:id])
 end
 
+def destroy
+@artikel = Artikel.find(params[:id])
+@artikel.destroy
+flash[:notice]= "artikel berhasil dihapus"
+redirect_to artikels_path
+end
+
 private
 def artikel_params
 params.require(:artikel).permit(:judul,:deskripsi)

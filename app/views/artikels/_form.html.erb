@@ -1,0 +1,21 @@
+<% if @artikel.errors.any? %>
+<ul>
+  <% @artikel.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+<%= form_for @artikel do |f| %>
+  <p>
+    <%= f.label :judul %><br>
+    <%= f.text_field :judul %>
+  </p>
+  <p>
+    <%= f.label :deskripsi %><br>
+    <%= f.text_area :deskripsi %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to "Back artikel listing",artikels_path %>

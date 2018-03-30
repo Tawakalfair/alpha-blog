@@ -12,6 +12,7 @@
     <td><%= artikel.deskripsi %></td>
     <td><%= link_to "edit", edit_artikel_path(artikel) %></td>
     <td><%= link_to "show", artikel_path(artikel) %></td>
+    <td><%= link_to "hapus",artikel_path(artikel), method: :delete ,data: {confirm: "apakah anda yakin ?"} %></td>
   </tr>
   <% end %>
 </table>
