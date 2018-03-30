@@ -1,0 +1,17 @@
+<h1>listing semua artikel</h1>
+<p><%= link_to "buat artikel baru ",new_artikel_path %></p>
+
+<table>
+  <tr>
+    <th>Judul</th>
+    <th>Deskripsi</th>
+  </tr>
+  <% @artikel.each do |artikel| %>
+  <tr>
+    <td><%= artikel.judul %></td>
+    <td><%= artikel.deskripsi %></td>
+    <td><%= link_to "edit", edit_artikel_path(artikel) %></td>
+    <td><%= link_to "show", artikel_path(artikel) %></td>
+  </tr>
+  <% end %>
+</table>

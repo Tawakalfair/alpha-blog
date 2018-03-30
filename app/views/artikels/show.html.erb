@@ -1,3 +1,5 @@
 <h1>Menampilkan Artikel terpilih</h1>
 <p>Judul <%= @artikel.judul %></p>
 <p>Deskripsi <%= @artikel.deskripsi %></p>
+<%= link_to "edit artikel ini", edit_artikel_path(@artikel) %> |
+<%= link_to "Back artikel listing",artikels_path %>
