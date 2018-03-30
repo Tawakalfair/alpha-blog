@@ -1,4 +1,5 @@
 class ArtikelsController < ApplicationController
+  before_action :set_artikel, only:[:edit, :update, :show, :destroy]
 def index
 @artikel = Artikel.all
 end
@@ -9,11 +10,11 @@ def new
 end
 
 def edit
-@artikel = Artikel.find(params[:id])
+
 end
 
 def update
-  @artikel = Artikel.find(params[:id])
+
   if @artikel.update(artikel_params)
     flash[:notice] = "Artikel berhasil di edit"
     redirect_to artikel_path(@artikel)
@@ -38,17 +39,20 @@ end
 end
 
 def show
-@artikel= Artikel.find(params[:id])
+
 end
 
 def destroy
-@artikel = Artikel.find(params[:id])
+
 @artikel.destroy
 flash[:notice]= "artikel berhasil dihapus"
 redirect_to artikels_path
 end
 
 private
+def set_artikel
+  @artikel= Artikel.find(params[:id])
+end
 def artikel_params
 params.require(:artikel).permit(:judul,:deskripsi)
 end
