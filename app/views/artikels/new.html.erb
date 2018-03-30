@@ -1,0 +1,14 @@
+<h1>buat artikel baru</h1>
+<%= form_for @artikel do |f| %>
+  <p>
+    <%= f.label :judul %><br>
+    <%= f.text_field :judul %>
+  </p>
+  <p>
+    <%= f.label :deskripsi %><br>
+    <%= f.text_area :deskripsi %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
