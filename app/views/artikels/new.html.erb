@@ -1,4 +1,11 @@
 <h1>buat artikel baru</h1>
+<% if @artikel.errors.any? %>
+<ul>
+  <% @artikel.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
 <%= form_for @artikel do |f| %>
   <p>
     <%= f.label :judul %><br>
